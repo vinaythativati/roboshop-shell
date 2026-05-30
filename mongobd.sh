@@ -41,3 +41,9 @@ validate $? "Installing MongoDB"
 systemctl enable --now mongod
 validate $? "Starting and enabling MongoDB"
 
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+validate $? "Updating MongoDB config"
+
+systemctl restart mongod
+validate $? "Restarting MongoDB"
+
