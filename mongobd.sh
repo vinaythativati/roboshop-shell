@@ -18,7 +18,7 @@ NC='\033[0m' # No Color (Reset)
 user=$(id -u)
 
 if [ $user -ne 0 ]; then
-        echo -e "$time [ERROR] $R run with super user $NC" | tee -a $file
+        echo -e "$time [ERROR] $R run with super user $N" | tee -a $file
         exit 1
 fi
 validate() {
