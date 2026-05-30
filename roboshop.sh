@@ -14,11 +14,11 @@ INSTANCE_ID=$(aws ec2 run-instances \
 )
 echo "Launched instance with ID: $INSTANCE_ID"
 if [ $instance == "frontend" ]; then
-    IP=$(aws ec2 describe-instances --instance-ids i-0998ba329fe18e70d --query "Reservations[*].Instances[*].PublicIpAddress" --output text
+    IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query "Reservations[*].Instances[*].PublicIpAddress" --output text
 )
 R53_RECORD="$DOMAIN_NAME"
 else
-IP=$(aws ec2 describe-instances --instance-ids i-0998ba329fe18e70d --query "Reservations[*].Instances[*].PrivateIpAddress" --output text
+IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query "Reservations[*].Instances[*].PrivateIpAddress" --output text
 )
 R53_RECORD="$instance.$DOMAIN_NAME"
 fi
