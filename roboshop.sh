@@ -4,7 +4,7 @@ AMI_ID="ami-0220d79f3f480ecf5"
 
  for instance in $@ 
  do 
-INSTANCE_ID=$(ws ec2 run-instances \
+INSTANCE_ID=$(aws ec2 run-instances \
     --image-id ami-0220d79f3f480ecf5 \
     --instance-type t3.micro \
     --security-groups roboshop-common \
