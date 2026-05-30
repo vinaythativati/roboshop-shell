@@ -25,7 +25,7 @@ fi
 
  
 
- done
+ 
 
  #update r53 record
 
@@ -49,4 +49,6 @@ fi
           }
         }
       ]
-    }'
+    }
+    '
+    done
