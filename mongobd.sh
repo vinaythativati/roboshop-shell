@@ -32,6 +32,6 @@ validate() {
 
 }
 
-cp mongo.repo /etc/apt/sources.list.d/
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 validate $? "Adding repo"
 
