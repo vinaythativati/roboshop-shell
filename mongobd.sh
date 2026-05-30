@@ -18,20 +18,26 @@ NC='\033[0m' # No Color (Reset)
 user=$(id -u)
 
 if [ $user -ne 0 ]; then
-        echo "$time [ERROR] $R run with super user $N" | tee -a $file
+        echo -e "$time [ERROR] $R run with super user $N" | tee -a $file
         exit 1
 fi
 validate() {
 
         if [ $1 -ne 0 ]; then
-                echo "$time [ERR] $2 .. $RED failure" | tee -a $file
+                echo -e "$time [ERR] $2 .. $RED failure" | tee -a $file
 
         else
-                echo "$time  [INFO] $2 .. $GREEN success" | tee -a $file
+                echo -e "$time  [INFO] $2 .. $GREEN success" | tee -a $file
         fi
 
 }
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 validate $? "Adding repo"
+
+dnf install mongodb-org -y &>> $file
+validate $? "Installing MongoDB"
+
+systemctl enable --now mongod
+validate $? "Starting and enabling MongoDB"
 
