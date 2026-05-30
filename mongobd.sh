@@ -2,7 +2,7 @@
 
 LOGS="/var/log/roboshop"
 sudo mkdir -p $LOGS
-sudo chown -R vinay:vinay $LOGS
+sudo chown -R ec2-user:ec2-user $LOGS
 sudo chmod -R 755 $LOGS
 file="$LOGS/$0.log".
 
