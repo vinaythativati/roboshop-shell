@@ -24,10 +24,10 @@ fi
 validate() {
 
         if [ $1 -ne 0 ]; then
-                echo -e "$time [ERR] $2 .. $RED failure" | tee -a $file
+                echo -e "$time [ERR] $2 .. $RED Failure $N" | tee -a $file
 
         else
-                echo -e "$time  [INFO] $2 .. $GREEN success" | tee -a $file
+                echo -e "$time  [INFO] $2 .. $GREEN success $N" | tee -a $file
         fi
 
 }
