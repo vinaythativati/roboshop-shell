@@ -23,7 +23,7 @@ IP=$(aws ec2 describe-instances --instance-ids i-0998ba329fe18e70d --query "Rese
 R53_RECORD="$instance.$DOMAIN_NAME"
 fi
 
- 
+ fs
 
  
 
