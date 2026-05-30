@@ -33,7 +33,7 @@ fi
     --hosted-zone-id $ZONE_ID \
     --change-batch '
     {
-    "comment": "Updating record for",
+    "Comment": "Updating record for",
       "Changes": [
         {
           "Action": "UPSERT",
