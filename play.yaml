@@ -1,0 +1,7 @@
+- name: ping the serveres
+  hosts: frontend
+  become: true
+  tasks: 
+    - name: ping the servers
+      ping:
+  
