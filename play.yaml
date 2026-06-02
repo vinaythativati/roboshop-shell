@@ -1,7 +1,14 @@
-- name: ping the serveres
-  hosts: frontend
-  become: true
-  tasks: 
-    - name: ping the servers
-      ping:
-  
+- name: nginx install and start
+  hosts: forntend
+  become: yes
+  tasks:
+    - name: install nginx
+      package:
+        name: nginx
+        state: present
+
+    - name: start nginx
+      service:
+        name: starting nginx
+        state: started
+        enabled: yes 
